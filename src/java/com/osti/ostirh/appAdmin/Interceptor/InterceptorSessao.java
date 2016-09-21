@@ -38,7 +38,7 @@ public class InterceptorSessao extends HandlerInterceptorAdapter {
             return true;
         }
 
-        response.sendRedirect("login?opr=1");
+        response.sendRedirect("/appAdmin/login?opr=1");
         return false;
     }
 

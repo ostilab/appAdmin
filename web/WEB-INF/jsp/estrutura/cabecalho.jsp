@@ -47,7 +47,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#"><span class="glyphicon glyphicon-user"></span> Perfil</a></li>
-                <li><a href="terminarsessao?idorg=0&def_opr=ts"><span class="glyphicon glyphicon-log-out"></span> Sair</a></li>
+                <li><a href="/appAdmin/terminarsessao?idorg=0&def_opr=ts"><span class="glyphicon glyphicon-log-out"></span> Sair</a></li>
             </ul>
         </div>
     </nav>
@@ -64,10 +64,10 @@
         <!-- Menu -->
 
         <ul>
-            <li><a href="redirect?p=admin/org&a=organizacao">Organizações</a></li>
-            <li><a href="redirect?p=admin/candidato&a=candidato">Candidatos</a></li>
-            <li><a href="redirect?p=admin/planos&a=planos">Planos</a></li>
-            <li><a href="redirect?p=admin&a=definicoes">Definições</a></li>
-            <li><a href="redirect?p=admin/ajuda">Ajuda</a></li>
+            <li><a href="<%=request.getContextPath()%>/org/">Organizações</a></li>
+            <li><a href="<%=request.getContextPath()%>/redirect?p=admin/candidato&a=candidato">Candidatos</a></li>
+            <li><a href="<%=request.getContextPath()%>/redirect?p=admin/planos&a=planos">Planos</a></li>
+            <li><a href="<%=request.getContextPath()%>/redirect?p=admin&a=definicoes">Definições</a></li>
+            <li><a href="<%=request.getContextPath()%>/redirect?p=admin/ajuda">Ajuda</a></li>
         </ul>
     </div>

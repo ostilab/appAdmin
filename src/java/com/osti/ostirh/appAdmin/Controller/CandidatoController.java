@@ -7,13 +7,17 @@ package com.osti.ostirh.appAdmin.Controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  *
  * @author len
  */
 @Controller
-@RequestMapping("/admin")
-public class AdminController {
-
+@RequestMapping("/cand")
+public class CandidatoController {
+ @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String redirect() {
+        return "forward:/redirect?p=admin/candidato&a=candidato";
+    }
 }

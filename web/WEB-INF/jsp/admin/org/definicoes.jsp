@@ -9,7 +9,7 @@
 <div class="container">
 
     <div class="row">
-        <a href="redirect?p=admin/org&a=organizacao">Voltar</a>
+        <a href="/appAdmin/org/">Voltar</a>
         <h4 class="text-center">Organizações</h4>
         <hr>
         <div class="col-md-5 col-lg-offset-3">

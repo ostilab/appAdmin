@@ -86,7 +86,7 @@ public class MainController {
         return p + "/" + a;
         //return "organizacao";
     }
-
+/*
     @RequestMapping(value = "/pesquisarOrg")
     public String pesquisarOrg(@RequestParam(value = "nome", required = true) String nome,
             @RequestParam(value = "obj_social", required = true) String objectosocial,
@@ -132,7 +132,7 @@ public class MainController {
 
         //return "organizacao";
     }
-
+*/
     @RequestMapping(value = "/iniciarsessao")
     public String login(@RequestParam(value = "utilizador", required = true) String utilizador,
             @RequestParam(value = "senha", required = true) String senha,
@@ -161,7 +161,7 @@ public class MainController {
 
     }
 
-    @RequestMapping(value = "/alterarOrg")
+   /* @RequestMapping(value = "/alterarOrg")
     public String alterarOrganizacao(@RequestParam(value = "idorg", required = true) int idorg,
             @RequestParam(value = "def_opr", required = true) String opr,
             @RequestParam("datainicioadesao") @DateTimeFormat(pattern = "yyyy-MM-dd") Date datainicioadesao,
@@ -186,5 +186,5 @@ public class MainController {
         OrgLogica.alterarEstadoConta(idorg);
 
         response.sendRedirect("definicoes?def_opr=defOrg&idorg=" + idorg);
-    }
+    }*/
 }
