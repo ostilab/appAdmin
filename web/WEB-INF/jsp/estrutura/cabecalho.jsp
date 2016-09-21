@@ -65,7 +65,7 @@
 
         <ul>
             <li><a href="<%=request.getContextPath()%>/org/">Organizações</a></li>
-            <li><a href="<%=request.getContextPath()%>/redirect?p=admin/candidato&a=candidato">Candidatos</a></li>
+            <li><a href="<%=request.getContextPath()%>/cand/">Candidatos</a></li>
             <li><a href="<%=request.getContextPath()%>/redirect?p=admin/planos&a=planos">Planos</a></li>
             <li><a href="<%=request.getContextPath()%>/redirect?p=admin&a=definicoes">Definições</a></li>
             <li><a href="<%=request.getContextPath()%>/redirect?p=admin/ajuda">Ajuda</a></li>
