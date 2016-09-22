@@ -141,7 +141,7 @@ public class MainController {
         Admin admin = new Admin(utilizador, senha);
 
         if (new AdminLogica(request).eAdmin(admin)) {
-      
+            session.setAttribute("admin", "Administrador Master");
             session.setAttribute("utilizadorLogado", admin);
             return "admin/home";
         }

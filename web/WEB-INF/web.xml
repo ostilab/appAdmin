@@ -17,7 +17,7 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
     <!-- Paginas de Erro -->
-    <error-page>
+    <!-- <error-page>
         <exception-type>java.lang.Exception</exception-type>
         <location>/WEB-INF/erro/exception.jsp</location>
     </error-page>
@@ -25,7 +25,7 @@
         <error-code>404</error-code>
         <location>/WEB-INF/erro/404.jsp</location>
     </error-page>
-    <!-- FIM Paginas de Erro -->
+    FIM Paginas de Erro -->
     <session-config>
         <session-timeout>
             30

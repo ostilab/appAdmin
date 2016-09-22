@@ -8,7 +8,7 @@
 
 <div class="container">
     <div class="row">
-        <h1 class="text-center">Seja bem-vindo sr.Administrador!</h1>
+        <h1 class="text-center">Seja bem-vindo Sr.${admin}!</h1>
     </div>
    
 </div>

@@ -10,6 +10,7 @@ import com.osti.ostirh.appAdmin.Logica.OrganizacaoLogica;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.Date;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -18,6 +19,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.portlet.ModelAndView;
 
 /**
  *
@@ -46,7 +48,7 @@ public class OrganizacaoController {
             @RequestParam(value = "datainicio_ia", required = true) String datainicio_ia,
             @RequestParam(value = "datafim_ia", required = true) String datafim_ia,
             @RequestParam(value = "datainicio_fa", required = true) String datainicio_fa,
-            @RequestParam(value = "datafim_fa", required = true) String datafim_fa, HttpSession mod) {
+            @RequestParam(value = "datafim_fa", required = true) String datafim_fa, HttpServletRequest mod) {
 
         nome = nome.equals("") ? null : nome;
         objectosocial = objectosocial.equals("") ? null : objectosocial;
@@ -57,13 +59,11 @@ public class OrganizacaoController {
         datafim_fa = datafim_fa.equals("") ? null : datafim_fa;
 
         if (nome == null && objectosocial == null && plano == null && datainicio_ia == null && datafim_ia == null && datainicio_fa == null && datafim_fa == null) {
-            mod.setAttribute("organizacao", OrgLogica.getTodasOrgs());
+            mod.getSession().setAttribute("organizacao", OrgLogica.getTodasOrgs());
         } else {
-            mod.setAttribute("organizacao", OrgLogica.getTodasOrgs(nome, objectosocial, plano, datainicio_ia, datafim_ia, datainicio_fa, datafim_fa));
-
+            mod.getSession().setAttribute("organizacao", OrgLogica.getTodasOrgs(nome, objectosocial, plano, datainicio_ia, datafim_ia, datainicio_fa, datafim_fa));
         }
-
-        return "admin/org/organizacao";
+        return "forward:/org/pesquisarOrg?nome=&obj_social=&plano=&pesquisa=Pesquisar&datainicio_ia=&datafim_ia=&datainicio_fa=&datafim_fa=";
         //return "organizacao";
     }
 
@@ -105,10 +105,10 @@ public class OrganizacaoController {
     }
 
     @RequestMapping(value = "/alterarEstadoConta")
-    public void alterarEstadoConta(HttpServletResponse response,
-            @RequestParam("idorg") int idorg, ModelMap mod) throws IOException {
+    public String alterarEstadoConta(HttpServletResponse response,
+            @RequestParam("idorg") int idorg, ModelMap mod, ModelAndView mav) throws IOException {
         OrgLogica.alterarEstadoConta(idorg);
+        return "redirect:/org/definicoes.html?def_opr=defOrg&idorg=" + idorg + "#EstadoDaConta";
 
-        response.sendRedirect("definicoes?def_opr=defOrg&idorg=" + idorg);
     }
 }

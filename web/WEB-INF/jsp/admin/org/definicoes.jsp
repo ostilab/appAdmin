@@ -130,17 +130,18 @@
                     });
                 </script>
                 <div class="form-group">
+                    ${confirmacao}
                     <div class="col-xs-8">
                         <h4  class="control-label text-center">Estado da Conta:</h4>
                         <br>
                     </div>
 
-                    <div class="col-xs-5">
+                    <div id="EstadoDaConta" class="col-xs-5">
                         <c:if test="${organizacao.estado eq true}">
-                            <p>Activa</p>
+                            <p class="text-primary">Activa</p>
                         </c:if>
                         <c:if test="${organizacao.estado != true}">
-                            <p>Desativada</p>
+                            <p class="text-danger">Desativada</p>
                         </c:if>
                     </div>
                      <div class="col-xs-5">
